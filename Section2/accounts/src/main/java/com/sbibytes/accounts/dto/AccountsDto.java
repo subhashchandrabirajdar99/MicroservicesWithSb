@@ -1,11 +1,18 @@
 package com.sbibytes.accounts.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+
 public class AccountsDto {
     //account id not adding for privacy
+    @NotEmpty(message = "Account Number can not be a null or empty")
+    @Pattern(regexp = "$|[0-9]{10}",message = "Mobile number must be 10 digits")
     private Long accountNumber;
 
+    @NotEmpty(message = "AccountType can not be a null or empty")
     private String accountType;
 
+    @NotEmpty(message = "BranchAddress cant not be a null or empty")
     private String branchAddress;
 
     public Long getAccountNumber() {

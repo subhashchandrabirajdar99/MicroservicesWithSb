@@ -5,7 +5,7 @@ import com.sbibytes.accounts.entity.Accounts;
 
 public class AccountMapper {
 
-    public static AccountsDto mapToAccountsDto(Accounts accounts,AccountsDto accountsDto){
+    public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
         accountsDto.setAccountNumber(accounts.getAccountNumber());
         accountsDto.setAccountType(accounts.getAccountType());
         accountsDto.setBranchAddress(accounts.getBranchAddress());
@@ -29,9 +29,9 @@ public class AccountMapper {
 //    }
 
     public static Accounts mapToAccounts(AccountsDto accountsDto, Accounts accounts) {
-         accounts.setAccountNumber(accountsDto.getAccountNumber());
-         accounts.setAccountType(accountsDto.getAccountType());
-         accounts.setBranchAddress(accountsDto.getBranchAddress());
-         return accounts;
+        accounts.setAccountNumber(accountsDto.getAccountNumber());
+        accounts.setAccountType(accountsDto.getAccountType());
+        accounts.setBranchAddress(accountsDto.getBranchAddress());
+        return accounts;
     }
 }
