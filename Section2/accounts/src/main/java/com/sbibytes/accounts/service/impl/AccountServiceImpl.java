@@ -14,7 +14,6 @@ import com.sbibytes.accounts.repository.CustomerRepository;
 import com.sbibytes.accounts.service.IAccountsService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -41,8 +40,6 @@ public class AccountServiceImpl implements IAccountsService {
             throw new CustomerAlreadyExistException("Customer already registered with given mobileNumber : "
                     + customerDto.getMobileNumber());
         }
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("anonymous");
         Customer savedCustomer = customerRepository.save(customer);
         // customer to account created
         accountsRepository.save(createNewAccount(savedCustomer));
@@ -60,8 +57,6 @@ public class AccountServiceImpl implements IAccountsService {
         newAccount.setAccountNumber(randomAccNumber);
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
-        newAccount.setCreatedAt(LocalDateTime.now());
-        newAccount.setCreatedBy("anonymous");
         return newAccount;
     }
 

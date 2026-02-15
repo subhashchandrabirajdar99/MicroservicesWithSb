@@ -1,17 +1,34 @@
 package com.sbibytes.accounts.dto;
 
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
+@Schema(
+        name = "ErrorResponse",
+        description = "Schema to hold error response information"
+)
 public class ErrorResponseDto {
     //easy to debug the issue
+    @Schema(
+            description = "API path invoked by client"
+    )
     private String apiPath;
+
+    @Schema(
+            description = "Error code representing the error happened"
+    )
     private HttpStatus errorCode;// why error invocation failed
+
+    @Schema(
+            description = "Error message representing the error happened"
+    )
     private String errorMessage;
+
+    @Schema(
+            description = "time representing the error happened"
+    )
     private LocalDateTime errorTime;
 
     public ErrorResponseDto(String apiPath, HttpStatus errorCode, String errorMessage, LocalDateTime errorTime) {
