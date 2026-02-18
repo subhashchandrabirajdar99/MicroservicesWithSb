@@ -1,6 +1,5 @@
 package com.sbibytes.loans.service.impl;
 
-
 import com.sbibytes.loans.constants.LoansConstants;
 import com.sbibytes.loans.dto.LoansDto;
 import com.sbibytes.loans.entity.Loans;
@@ -90,6 +89,4 @@ public class LoansServiceImpl implements ILoansService {
         loansRepository.deleteById(loans.getLoanId());
         return true;
     }
-
-
 }

@@ -1,12 +1,14 @@
 package com.sbibytes.loans.audit;
 
 
+import org.jspecify.annotations.NullMarked;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 @Component("auditAwareImpl")
+@NullMarked
 public class AuditAwareImpl implements AuditorAware<String> {
 
     /**

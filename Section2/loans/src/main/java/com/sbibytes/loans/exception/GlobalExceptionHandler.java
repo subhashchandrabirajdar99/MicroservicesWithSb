@@ -1,7 +1,7 @@
 package com.sbibytes.loans.exception;
 
-
 import com.sbibytes.loans.dto.ErrorResponseDto;
+import org.jspecify.annotations.NullMarked;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @ControllerAdvice
+@NullMarked
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
@@ -31,6 +32,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         validationErrorList.forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String validationMsg = error.getDefaultMessage();
+            assert validationMsg != null;
             validationErrors.put(fieldName, validationMsg);
         });
         return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST);
