@@ -1,0 +1,34 @@
+services:
+  accounts:
+    image: "sbbytes/accounts:s4"
+    container_name: account_ms
+    ports:
+      - "8080:8080"
+      - "8081:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 800m
+  loans:
+    image: "sbbytes/loans:s4"
+    container_name: loans_ms
+    ports:
+      - "8090:8090"
+      - "8091:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 800m
+  cards:
+    image: "sbbytes/cards:s4"
+    container_name: cards_ms
+    ports:
+      - "9000:9000"
+      - "9001:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 800m
+networks:
+  -sandbank:
+    driver: bridge
