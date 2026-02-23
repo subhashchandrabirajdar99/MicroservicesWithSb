@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version : "2.0"
+
+loans:
+  message: "Welcome to SBIBank loans related QA APIs "
+  contactDetails:
+    name: "Cryano Marita - QA Lead"
+    email: "cryano@sbibank.com"
+  onCallSupport:
+    - "(666) 265-3795"
+    - "(666) 734-8371"
+

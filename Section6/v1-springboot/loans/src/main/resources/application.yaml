@@ -1,9 +1,10 @@
 server:
   port: 8090
+
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    driver-class-name: org.h2.Driver
     username: sa
     password: ''
   h2:
@@ -14,3 +15,24 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+  profiles:
+    active: qa
+
+build:
+  version: "3.0"
+
+loans:
+  message: "Welcome to SBIBank loans related local APIs"
+  contact-details:
+    name: "Ajay Patil - Developer"
+    email: "ajay.patil@sbibank.com"
+  on-call-support:
+    - "(452) 456-2176"
+    - "(546) 764-8934"
