@@ -33,3 +33,12 @@ spring:
 build:
   version : "3.0"
 
+accounts:
+  message: "Welcome to SBIBank account related local APIs "
+  contactDetails:
+    name: "Subhash Patil - Developer"
+    email: "subhash.patil@sbibank.com"
+  onCallSupport:
+    - "(555) 555-1234"
+    - "(555) 523-1234"
+
