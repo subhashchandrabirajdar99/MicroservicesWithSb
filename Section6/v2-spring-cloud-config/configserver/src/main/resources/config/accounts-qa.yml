@@ -1,0 +1,12 @@
+build:
+  version : "2.0"
+
+accounts:
+  message: "Welcome to SBIBank account related QA APIs "
+  contactDetails:
+    name: "Smitha Roy - QA Lead"
+    email: "smitha@sbibank.com"
+  onCallSupport:
+    - "(666) 265-3795"
+    - "(666) 734-8371"
+

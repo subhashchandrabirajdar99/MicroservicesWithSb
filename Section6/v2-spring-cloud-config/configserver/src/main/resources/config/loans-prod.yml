@@ -1,0 +1,12 @@
+build:
+  version : "1.0"
+
+loans:
+  message: "Welcome to SBIBank loans related prod APIs "
+  contactDetails:
+    name: "pelias Sudhir - Product Owner"
+    email: "pelias@sbibank.com"
+  onCallSupport:
+    - "(723) 656-8706"
+    - "(156) 342-0956"
+
