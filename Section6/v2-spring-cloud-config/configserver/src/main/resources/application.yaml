@@ -1,15 +1,25 @@
 spring:
   application:
-    name: "configserver"
+    name: configserver
   profiles:
-    active: native
-    # active: git
+    # active: native
+    active: git  # The default branch to read from (commonly 'main' or 'master').
   cloud:
     config:
       server:
-        native:
-          search-location: "classpath:/config"
+        # native: #here native means local
+          # search-locations: classpath:/config
+          # search-locations: "file:/C:/Users/subha/Downloads/config"
+        git:
+          uri: "https://github.com/subhashchandrabirajdar99/sbbytes-config.git"
+          default-label: main # default branch in github
+          timeout: 5 # wait for 5 second, Helps avoid hanging if the repo is slow or unreachable.
+          clone-on-start: true #telling to config server, during startup it will clone
+          force-pull: true  # Forces Config Server to pull the latest changes from Git every time a request is made.
+          # Useful to keep configs always in sync with the repo, even if local cache
+          # override local changes when it pulls
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
+
 server:
   port: 8071
-
-
